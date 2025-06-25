@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiguard Security | Professional Security Services</title>
+    <meta name="description" content="Trusted security services including mobile patrols, key holding, and vacant property checks across London, Cardiff, and Midlands.">
+    <base target="_self">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a365d',
+                        secondary: '#2c5282',
+                        accent: '#ecc94b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1582738411708-b4144d8b8592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center" onclick="navigate(event, 'home')">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">IS</div>
+                    <span class="text-xl font-bold text-primary">Indiguard Security</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-700 hover:text-primary font-medium transition-all" onclick="navigate(event, 'home')">Home</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium transition-all" onclick="navigate(event, 'about')">About Us</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium transition-all" onclick="navigate(event, 'services')">Services</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium transition-all" onclick="navigate(event, 'coverage')">Coverage</a>
+                <a href="#" class="text-gray-700 hover:text-primary font-medium transition-all" onclick="navigate(event, 'contact')">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="tel:+441234567890" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-all hidden sm:inline-block">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+                <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#" class="py-2 border-b border-gray-100" onclick="navigate(event, 'home')">Home</a>
+                <a href="#" class="py-2 border-b border-gray-100" onclick="navigate(event, 'about')">About Us</a>
+                <a href="#" class="py-2 border-b border-gray-100" onclick="navigate(event, 'services')">Services</a>
+                <a href="#" class="py-2 border-b border-gray-100" onclick="navigate(event, 'coverage')">Coverage</a>
+                <a href="#" class="py-2" onclick="navigate(event, 'contact')">Contact</a>
+                <a href="tel:+441234567890" class="bg-primary text-white px-4 py-2 rounded-md text-center my-2">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="page-section">
+            <!-- Hero Banner -->
+            <div class="hero-bg text-white py-24 px-4 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Your Trusted Security Partner</h1>
+                    <p class="text-xl mb-8">Professional security services tailored to protect your property and give you peace of mind</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#" class="bg-accent text-primary font-bold px-6 py-3 rounded-md hover:bg-yellow-500 transition-all" onclick="navigate(event, 'contact')">
+                            Request a Quote
+                        </a>
+                        <a href="tel:+441234567890" class="bg-transparent border-2 border-white text-white font-bold px-6 py-3 rounded-md hover:bg-white hover:text-primary transition-all">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="bg-gray-100 py-8">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-3xl text-primary mr-3"></i>
+                            <span class="font-semibold">24/7 Protection</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-3xl text-primary mr-3"></i>
+                            <span class="font-semibold">Fully Licensed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-3xl text-primary mr-3"></i>
+                            <span class="font-semibold">Experienced Team</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-pound-sign text-3xl text-primary mr-3"></i>
+                            <span class="font-semibold">Competitive Rates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Services -->
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Our Security Services</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive security solutions designed to meet your specific needs</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-car text-6xl text-primary"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Mobile Patrols</h3>
+                            <p class="text-gray-600 mb-4">Regular, unpredictable patrols to deter criminal activity and ensure your property is secure.</p>
+                            <a href="#" class="text-primary font-semibold hover:underline" onclick="navigate(event, 'services')">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-key text-6xl text-primary"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Key Holding</h3>
+                            <p class="text-gray-600 mb-4">Secure key holding service with rapid response to alarm activations and emergency call-outs.</p>
+                            <a href="#" class="text-primary font-semibold hover:underline" onclick="navigate(event, 'services')">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-building text-6xl text-primary"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Vacant Property Checks</h3>
+                            <p class="text-gray-600 mb-4">Regular inspections of unoccupied properties to prevent vandalism, squatting, and damage.</p>
+                            <a href="#" class="text-primary font-semibold hover:underline" onclick="navigate(event, 'services')">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition-all inline-block" onclick="navigate(event, 'services')">
+                        View All Services
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="bg-gray-100 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-primary mb-4">What Our Clients Say</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">Trusted by businesses and property owners across the region</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">"Indiguard Security has been protecting our commercial property for over 2 years. Their mobile patrols are reliable and their response times are excellent."</p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-semibold">James Wilson</h4>
+                                    <p class="text-sm text-gray-500">Property Manager</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">"The key holding service gives us peace of mind knowing that our business is in safe hands when we're not there. Highly professional team."</p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-semibold">Sarah Johnson</h4>
+                                    <p class="text-sm text-gray-500">Business Owner</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">"We use Indiguard for our vacant property checks. They've prevented several potential break-ins and always provide detailed reports."</p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                                <div>
+                                    <h4 class="font-semibold">Michael Brown</h4>
+                                    <p class="text-sm text-gray-500">Estate Agent</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="bg-primary text-white py-16">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Ready to Secure Your Property?</h2>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us today for a free, no-obligation quote and consultation</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#" class="bg-accent text-primary font-bold px-6 py-3 rounded-md hover:bg-yellow-500 transition-all" onclick="navigate(event, 'contact')">
+                            Get a Free Quote
+                        </a>
+                        <a href="tel:+441234567890" class="bg-transparent border-2 border-white text-white font-bold px-6 py-3 rounded-md hover:bg-white hover:text-primary transition-all">
+                            <i class="fas fa-phone mr-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="about" class="page-section hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">About Indiguard Security</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Professional security services with a commitment to excellence</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12 items-center mb-16">
+                    <div class="lg:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Security Team" class="rounded-lg shadow-lg w-full">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+                        <p class="text-gray-600 mb-6">At Indiguard Security, our mission is to provide reliable, professional security services that give our clients peace of mind. We combine modern technology with experienced personnel to deliver comprehensive security solutions tailored to your specific needs.</p>
+                        <p class="text-gray-600 mb-6">Founded with a commitment to excellence, we've grown to become a trusted security provider across London, Cardiff, and the Midlands.</p>
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <h4 class="font-bold text-primary mb-3">Why Choose Us?</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mr-2 mt-1"></i>
+                                    <span>Fully licensed and insured security professionals</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mr-2 mt-1"></i>
+                                    <span>24/7 monitoring and rapid response</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mr-2 mt-1"></i>
+                                    <span>Customized security solutions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mr-2 mt-1"></i>
+                                    <span>Competitive pricing with no hidden costs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mr-2 mt-1"></i>
+                                    <span>Local knowledge with national standards</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="py-12 bg-gray-100 rounded-lg">
+                    <div class="text-center mb-12">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Our Team</h3>
+                        <p class="text-gray-600 max-w-2xl mx-auto">Experienced professionals dedicated to your security</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                            <h4 class="font-bold text-lg mb-1">David Thompson</h4>
+                            <p class="text-primary font-medium mb-3">Founder & Director</p>
+                            <p class="text-gray-600">With over 15 years in the security industry, David founded Indiguard Security to provide reliable, customer-focused security services.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                            <h4 class="font-bold text-lg mb-1">Sarah Williams</h4>
+                            <p class="text-primary font-medium mb-3">Operations Manager</p>
+                            <p class="text-gray-600">Sarah oversees all operations, ensuring our services meet the highest standards and our clients receive exceptional service.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                            <h4 class="font-bold text-lg mb-1">Michael Brown</h4>
+                            <p class="text-primary font-medium mb-3">Head of Security</p>
+                            <p class="text-gray-600">Michael leads our team of security professionals, with extensive experience in mobile patrols and rapid response services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="page-section hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Our Security Services</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive solutions to protect your property and assets</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-car text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Mobile Patrols</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Our mobile patrol service provides a visible security presence to deter criminal activity. Patrols are conducted at random intervals to prevent predictability, with detailed reports provided after each visit.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Randomized patrol patterns</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>24/7 availability</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Detailed incident reporting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Immediate response to alarms</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="text-primary font-semibold hover:underline" onclick="navigate(event, 'contact')">Get a Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-key text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Key Holding & Alarm Response</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Our secure key holding service ensures rapid response to alarm activations and emergency situations. We maintain strict key control procedures and provide peace of mind when you're away from your property.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Secure key storage</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>24/7 alarm response</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Emergency access for authorized personnel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Key audit trail</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="text-primary font-semibold hover:underline" onclick="navigate(event, 'contact')">Get a Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-building text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Vacant Property Security</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Protect your unoccupied property from vandalism, squatting, and damage with our comprehensive vacant property security services. Regular inspections and maintenance checks help preserve your asset's value.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Scheduled property inspections</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Damage and maintenance reporting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Utility monitoring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Mail collection</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="text-primary font-semibold hover:underline" onclick="navigate(event, 'contact')">Get a Quote</a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white mr-4">
+                                    <i class="fas fa-user-shield text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold">Static Guarding</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">Our professional static guards provide a constant security presence at your premises, controlling access, monitoring activities, and responding to incidents as they occur.</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Access control</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Visitor management</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Incident reporting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                    <span>Emergency response</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="text-primary font-semibold hover:underline" onclick="navigate(event, 'contact')">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-primary text-white rounded-lg p-8 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Need a Custom Security Solution?</h3>
+                    <p class="mb-6 max-w-2xl mx-auto">We understand every property and business has unique security requirements. Contact us to discuss a tailored security package for your specific needs.</p>
+                    <a href="#" class="bg-accent text-primary font-bold px-6 py-3 rounded-md hover:bg-yellow-500 transition-all inline-block" onclick="navigate(event, 'contact')">
+                        Contact Us Today
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Coverage Area Section -->
+        <section id="coverage" class="page-section hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Our Coverage Areas</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Providing professional security services across key regions</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-landmark text-6xl text-primary"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">London</h3>
+                            <p class="text-gray-600 mb-4">Comprehensive security coverage across all London boroughs, including:</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Central London</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>East London</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>West London</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>North London</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>South London</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-dragon text-6xl text-primary"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Cardiff</h3>
+                            <p class="text-gray-600 mb-4">Reliable security services throughout Cardiff and surrounding areas:</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Cardiff City Centre</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Cardiff Bay</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Pontcanna</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Llandaff</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Whitchurch</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-industry text-6xl text-primary"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Midlands</h3>
+                            <p class="text-gray-600 mb-4">Professional security coverage across the Midlands region:</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Birmingham</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Coventry</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Nottingham</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Leicester</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                    <span>Derby</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 rounded-lg p-8 text-center">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Not in Our Coverage Area?</h3>
+                    <p class="mb-6 max-w-2xl mx-auto">We're expanding our services to new areas regularly. Contact us to inquire about availability in your location.</p>
+                    <a href="#" class="bg-primary text-white font-bold px-6 py-3 rounded-md hover:bg-secondary transition-all inline-block" onclick="navigate(event, 'contact')">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="page-section hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary mb-4">Contact Indiguard Security</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Get in touch for a free, no-obligation quote or to discuss your security needs</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-primary mb-6">Send Us a Message</h3>
+                            <form id="contactForm" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-1">Your Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-1">Email Address</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                </div>
+                                <div>
+                                    <label for="service" class="block text-gray-700 font-medium mb-1">Service Interested In</label>
+                                    <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                        <option value="">Select a service</option>
+                                        <option value="mobile_patrols">Mobile Patrols</option>
+                                        <option value="key_holding">Key Holding</option>
+                                        <option value="vacant_property">Vacant Property Checks</option>
+                                        <option value="static_guarding">Static Guarding</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-gray-700 font-medium mb-1">Your Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                                </div>
+                                <button type="submit" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition-all w-full">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                            <h3 class="text-xl font-bold text-primary mb-6">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Email</h4>
+                                        <a href="mailto:info.indiguard@gmail.com" class="text-gray-600 hover:text-primary">info.indiguard@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                        <i class="fas fa-phone text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Phone</h4>
+                                        <a href="tel:+441234567890" class="text-gray-600 hover:text-primary">+44 1234 567890</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                        <i class="fas fa-map-marker-alt text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Office</h4>
+                                        <p class="text-gray-600">123 Security Lane, London, UK</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                        <i class="fas fa-clock text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Hours</h4>
+                                        <p class="text-gray-600">24/7 Emergency Response</p>
+                                        <p class="text-gray-600">Office: Mon-Fri 9am-5pm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h3 class="text-xl font-bold text-primary mb-6">Connect With Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-all">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition-all">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition-all">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition-all">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition-all">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="h-64 bg-gray-200 flex items-center justify-center">
+                                <i class="fas fa-map text-4xl text-primary"></i>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-primary mb-2">Our Location</h4>
+                                <p class="text-gray-600">Find us on Google Maps for directions to our office</p>
+                                <a href="#" class="text-primary font-medium hover:underline inline-block mt-2">View on Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Indiguard Security</h3>
+                    <p class="mb-4">Professional security services you can trust across London, Cardiff, and the Midlands.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-accent transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-accent transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-accent transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-accent transition-all"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'home')">Home</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'about')">About Us</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'services')">Services</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'coverage')">Coverage Areas</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'contact')">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'services')">Mobile Patrols</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'services')">Key Holding</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'services')">Vacant Property Checks</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'services')">Static Guarding</a></li>
+                        <li><a href="#" class="hover:text-accent transition-all" onclick="navigate(event, 'services')">Alarm Response</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <address class="not-italic">
+                        <p class="mb-2">123 Security Lane</p>
+                        <p class="mb-2">London, UK</p>
+                        <p class="mb-2"><a href="tel:+441234567890" class="hover:text-accent transition-all">+44 1234 567890</a></p>
+                        <p class="mb-2"><a href="mailto:info.indiguard@gmail.com" class="hover:text-accent transition-all">info.indiguard@gmail.com</a></p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Indiguard Security. All rights reserved.</p>
+                <div class="mt-2 text-sm">
+                    <a href="#" class="hover:text-accent transition-all">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-accent transition-all">Terms of Service</a> | 
+                    <a href="#" class="hover:text-accent transition-all">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function navigate(event, sectionId) {
+            event.preventDefault();
+            
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Set home as default visible section
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('home').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
